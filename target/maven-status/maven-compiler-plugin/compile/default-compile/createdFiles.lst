@@ -1,0 +1,11 @@
+com\setsuna\springboot\service\Impl\UserServiceImpl.class
+com\setsuna\springboot\service\Impl\UserRowMapper.class
+com\setsuna\springboot\pojo\User.class
+com\setsuna\springboot\service\Impl\ScoreRowMapper.class
+com\setsuna\springboot\service\ScoreService.class
+com\setsuna\springboot\service\Impl\ScoreServiceImpl.class
+com\setsuna\springboot\Controller\ScoreController.class
+com\setsuna\springboot\Controller\UserController.class
+com\setsuna\springboot\service\UserService.class
+com\setsuna\springboot\pojo\Score.class
+com\setsuna\springboot\SpringBootSetsunaSqlApplication.class

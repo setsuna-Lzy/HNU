@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>交互界面</title>
+    <script type="text/javascript">
+        function onclick1(){
+            window.open("/getAllUser","iframe_window");
+        }
+    </script>
+</head>
+<body>
+<table>
+    <td><iframe height="700" width="500" name="iframe_window" id="MainFrame"></iframe></td>
+    <td>
+        <table border="1px">
+            <!--用户行-->
+            <tr>
+                <!--获取所有用户-->
+                <td><button id="getAllButton" onclick="onclick1()">获取所有用户</button></td>
+                <td>
+                    <form action="/getUser" method="post" target="iframe_window">
+                            用户id:<input type="text" name="id"/><br/>
+                            <input type="submit" value="查询用户信息">
+                    </form>
+                </td>
+                <td>
+                    <form method="post" action="/addUser" target="iframe_window">
+                        学号:<input type="text" name="stu_no"/><br/>
+                        姓名:<input type="text" name="stu_name"/><br/>
+                        性别:<input type="radio" name="sex" value="男"/>男
+                        <input type="radio" name="sex" value="女"/>女<br/>
+                        出生日期:<input type="date" name="birth"/><br/>
+                        专业:<input type="text" name="department"/><br/>
+                        籍贯:<input type="text" name="addr"><br/>
+                        <input type="submit" value="添加用户">
+                    </form>
+                </td>
+                <td>
+                    <form action="/deleteUser" method="post" target="iframe_window">
+                        用户id:<input type="text" name="id"/><br/>
+                        <input type="submit" value="删除用户">
+                    </form>
+                </td>
+                <td>
+                    <form method="post" action="/updateUser" target="iframe_window">
+                        序号:<input type="text" name="id"/><br/>
+                        学号:<input type="text" name="stu_no"/><br/>
+                        姓名:<input type="text" name="stu_name"/><br/>
+                        性别:<input type="radio" name="sex" value="男"/>男
+                        <input type="radio" name="sex" value="女"/>女<br/>
+                        出生日期:<input type="date" name="birth"/><br/>
+                        专业:<input type="text" name="department"/><br/>
+                        籍贯:<input type="text" name="addr"><br/>
+                        <input type="submit" value="更新用户">
+                    </form>
+                </td>
+            </tr>
+            <!--分数行-->
+            <tr>
+                <td>
+                    <form method="post" action="/getScoreByStuNo" target="iframe_window">
+                        stuNo:<input type="text" name="std_no"/><br/>
+                        <input type="submit" value="通过std_no获取score"/>
+                    </form>
+                </td>
+                <td>
+                    <form method="post" action="/getScoreById" target="iframe_window">
+                        成绩的id :<input type="text" name="id"/><br/>
+                        <input type="submit" value="通过id获取score"/>
+                    </form>
+                </td>
+                <td>
+                    <form method="post" action="/addScore" target="iframe_window">
+                        学号:<input type="text" name="stu_no"/><br/>
+                        科目:<input type="text" name="c_name"/><br/>
+                        成绩:<input type="text" name="grade"/><br/>
+                        <input type="submit" value="添加成绩"/>
+                    </form>
+                </td>
+                <td>
+                    <form method="post" action="/updateScore" target="iframe_window">
+                        序号:<input type="text" name="score_id"><br/>
+                        学号:<input type="text" name="stu_no"/><br/>
+                        科目:<input type="text" name="c_name"/><br/>
+                        成绩:<input type="text" name="grade"/><br/>
+                        <input type="submit" value="更新成绩"/>
+                    </form>
+                </td>
+                <td>
+                    <form method="post" action="/deleteScore" target="iframe_window">
+                        要删除的成绩id :<input type="text" name="id"/><br/>
+                        <input type="submit" value="删除score记录"/>
+                    </form>
+                </td>
+            </tr>
+        </table>
+
+    </td>
+</table>
+
+
+</body>
+</html>
